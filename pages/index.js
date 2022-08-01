@@ -1,12 +1,22 @@
 import axios from 'axios'
-import { useState ,useRef} from 'react'
+import { useState ,useRef, useEffect} from 'react'
 import Link from 'next/link'
 import Head from 'next/head'
 
 export default function Home() {
   const [longUrl, setLongUrl] = useState('')
   const [shortUrl, setShortUrl] = useState('')
+  const [baseUrl, SetbaseUrl] = useState('')
+  const [loading, Setloading] = useState('')
   const inputValue = useRef()
+
+  useEffect(()=>{
+    SetbaseUrl(window.location.origin)
+  })
+  // if( typeof window != 'undefined'){
+    //  baseUrl = window.location.origin
+  // }
+  console.log(baseUrl);
 
   const handleUrl = async (e) => {
     e.preventDefault()
@@ -15,7 +25,12 @@ export default function Home() {
       alert("please give a valid link")
       return 
     }
+    Setloading(true)
     const result =await axios.post('/api/shorten',{longUrl})
+    if(result.data){
+      Setloading(false)
+    }
+
 
     
     setShortUrl('')
@@ -44,7 +59,13 @@ export default function Home() {
         <button type="submit">Get short URL</button>
 
       </form>
-      <h2>Your url is : <span className='copy' onClick={copyText} ref={inputValue}>{`${process.env.NEXT_PUBLIC_VERCEL_URL}/go/${shortUrl}`}</span> Click to copy text</h2>
+      {
+        loading?
+        <h3>Loading...</h3>
+        :
+        ''
+      }
+      <h2>Your url is : <span className='copy' onClick={copyText} ref={inputValue}>{`${baseUrl}/go/${shortUrl}`}</span> Click to copy text</h2>
 
     </>
 
