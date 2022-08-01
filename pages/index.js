@@ -44,7 +44,7 @@ export default function Home() {
         <button type="submit">Get short URL</button>
 
       </form>
-      <h2>Your url is : <span className='copy' onClick={copyText} ref={inputValue}>{`${process.env.NEXT_PUBLIC_VERCEL_URL}/${shortUrl}`}</span> Click to copy text</h2>
+      <h2>Your url is : <span className='copy' onClick={copyText} ref={inputValue}>{`${process.env.NEXT_PUBLIC_VERCEL_URL}/go/${shortUrl}`}</span> Click to copy text</h2>
 
     </>
 
