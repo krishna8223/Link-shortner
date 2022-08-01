@@ -5,8 +5,8 @@ import connect from "../../db";
 connect()
 export default async function handler(req,res){
     let longUrl = req.body.longUrl
-    console.log(longUrl);
-    console.log(typeof longUrl);
+    // console.log(longUrl);
+    // console.log(typeof longUrl);
     
     if(!longUrl || longUrl.length <= 0 || longUrl == ''){
        return res.json({status:false,error:'please write the url'})

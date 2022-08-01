@@ -25,6 +25,7 @@ export default function Home() {
       alert("please give a valid link")
       return 
     }
+    setShortUrl('')
     Setloading(true)
     const result =await axios.post('/api/shorten',{longUrl})
     if(result.data){
@@ -33,7 +34,6 @@ export default function Home() {
 
 
     
-    setShortUrl('')
     setShortUrl(result.data.shortUrl)
 
   }
@@ -65,7 +65,13 @@ export default function Home() {
         :
         ''
       }
-      <h2>Your url is : <span className='copy' onClick={copyText} ref={inputValue}>{`${baseUrl}/go/${shortUrl}`}</span> Click to copy text</h2>
+      {
+        shortUrl!=''?
+        <h2>Your url is : <span className='copy' onClick={copyText} ref={inputValue}>{`${baseUrl}/go/${shortUrl}`}</span> Click to copy text</h2>
+        :
+        ''
+
+      }
 
     </>
 
