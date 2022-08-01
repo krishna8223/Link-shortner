@@ -1,6 +1,7 @@
 import axios from 'axios'
 import { useState ,useRef} from 'react'
 import Link from 'next/link'
+import Head from 'next/head'
 
 export default function Home() {
   const [longUrl, setLongUrl] = useState('')
@@ -32,8 +33,11 @@ export default function Home() {
 
   return (
     <>
+     <Head>
+        <title>Link Shortner</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
       <h2>URL Shortner</h2>
-      <h3> {`${process.env.MONGO_URL}`}</h3>
 
       <form onSubmit={handleUrl}>
         <input className='linkInput' type="text" placeholder='Enter URL' onChange={(e) => { setLongUrl(e.target.value) }} />
