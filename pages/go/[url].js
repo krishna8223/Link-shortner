@@ -31,7 +31,9 @@ const Url = () => {
     }
 
   return (
-      <h1> Please Wait</h1>
+      <div className='wait-page'>
+          <h1 className='wait'> Please Wait ....</h1>
+       </div>
   )
 }
 

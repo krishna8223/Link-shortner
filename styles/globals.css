@@ -1,9 +1,16 @@
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
+
 html,
 body {
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    /* background-color:#D6A2E8; */
+    background-color:#1e272e;
+   
 }
 
 a {
@@ -22,8 +29,45 @@ a {
   body {
     color: white;
     background: black;
+
   }
 }
+
+.main{
+  height: 100vh;
+  width: 100vw;
+  display:flex;
+  justify-content:center;
+  align-items:center
+
+ 
+}
+
+.hero-section{
+  background-color: #fff;
+  /* clip-path: polygon(0% 5%, 100% 0, 100% 95%, 0 100%); */
+  padding: 30px;
+  height: 90%;
+  width: 95%;
+  border-radius: 10px;
+}
+
+.heading{
+  text-align: center;
+  font-size: 38px;
+  color: #1e272e;
+}
+.heading span{
+  color: #7b6350;
+}
+
+form{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
 
 .linkInput{
   height: 55px;
@@ -34,16 +78,46 @@ a {
     display: block;
     margin-bottom: 10px;
     margin-left: 10px;
+    outline-color: #1e272e;
+    color: #7b6350;
+    /* border: 1px solid #7b6350; */
   }
   button{
-    margin-left: 10px;
-  margin-bottom: 10px;
+  margin-top: 30px;
   height: 55px;
   font-size: 20px;
+  border: 2px solid #1e272e;
+  border-radius: 8px;
+  padding: 10px;
+  color: #fff;
+  background-color: #1e272e;
+  cursor: pointer;
+}
+
+.result{
+  text-align: center;
+  margin-top: 30px;
+
 }
 
 .copy{
   cursor: pointer;
-  border-bottom: 2px solid black;
-  color: cadetblue;
+  border-bottom: 2px solid #7b6350;
+  /* color: cadetblue; */
+  /* background-color: #7b6350; */
+  color: black;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.wait-page{
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.wait{
+  color: #fff;
+  
 }
