@@ -59,6 +59,7 @@ export default function Home() {
 
       {/* <Header/> */}
       <h1 className='heading'>Shortnen <span> Links </span></h1>
+      <p className='detail'>Short your links in one click</p>
 
       <form onSubmit={handleUrl}>
         <input className='linkInput' type="text" placeholder='Enter or paste url' onChange={(e) => { setLongUrl(e.target.value) }} />
